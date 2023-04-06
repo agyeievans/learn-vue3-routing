@@ -14,5 +14,6 @@ import {RouterLink} from "vue-router"
         font-weight: bolder;
         color: rgb(153, 104, 14);
         font-size: 20px;
+        margin: 10px;
     }
 </style>

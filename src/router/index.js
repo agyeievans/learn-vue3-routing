@@ -4,24 +4,32 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue"
 import AboutView from "../views/AboutView.vue"
 import CarView from "../views/CarView.vue"
+import ContactView from "../views/ContactView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: "/",
-            nmae: "home",
+            name: "home",
             component: HomeView
         },
         {
             path: "/about",
-            nmae: "about",
+            name: "about",
             component: AboutView
         },
         {
             path: "/cars/:id",
-            nmae: "car",
-            component: CarView
+            name: "car",
+            component: CarView,
+            children: [
+                {
+                    path: "contact",
+                    // name: "contact",
+                    component: ContactView
+                }
+            ]
         }
     ]
 })
